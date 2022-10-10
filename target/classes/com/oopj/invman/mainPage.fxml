@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopj.invman.MainController">
+   <children>
+      <Button fx:id="generateTotal" layoutX="231.0" layoutY="466.0" mnemonicParsing="false" onAction="#generateTotal" text="Generate Total Amount" />
+      <Label layoutX="14.0" layoutY="55.0" prefHeight="43.0" prefWidth="43.0" text="Bill">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <TextField fx:id="barcode" layoutX="14.0" layoutY="23.0" promptText="Barcode" />
+      <Label layoutX="247.0" layoutY="494.0" text="Total:">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label fx:id="amount" layoutX="308.0" layoutY="491.0" text="Label">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <TextField fx:id="discount" layoutX="161.0" layoutY="466.0" prefHeight="25.0" prefWidth="65.0" />
+      <Button fx:id="exit" layoutX="336.0" layoutY="64.0" mnemonicParsing="false" onAction="#onExitButtonClicked" text="Exit" />
+      <Button fx:id="newBill" layoutX="271.0" layoutY="64.0" mnemonicParsing="false" onAction="#newBill" text="New Bill" />
+      <Button fx:id="add" layoutX="174.0" layoutY="23.0" mnemonicParsing="false" onAction="#onItemAdd" text="Add" />
+      <Label layoutX="106.0" layoutY="457.0" prefHeight="43.0" prefWidth="173.0" text="Discount" />
+      <AnchorPane layoutX="13.0" layoutY="98.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="360.0" style="-fx-background-color: GRAY;">
+         <children>
+            <Text layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr No">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="156.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Items">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="308.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MRP">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Text>
+            <Separator layoutX="69.0" orientation="VERTICAL" prefHeight="360.0" />
+            <Separator layoutX="288.0" orientation="VERTICAL" prefHeight="360.0" />
+            <Separator layoutY="33.0" prefWidth="360.0" />
+            <Text layoutX="10.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp1" layoutX="308.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item1" layoutX="79.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="10.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item2" layoutX="78.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp2" layoutX="308.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item3" layoutX="80.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp3" layoutX="308.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item4" layoutX="80.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp4" layoutX="308.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item5" layoutX="80.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp5" layoutX="308.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item6" layoutX="80.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp6" layoutX="308.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item7" layoutX="80.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp7" layoutX="308.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item8" layoutX="80.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp8" layoutX="308.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item9" layoutX="80.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp9" layoutX="308.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text layoutX="12.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="item10" layoutX="80.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+            <Text fx:id="mrp10" layoutX="308.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <Button fx:id="addtodb" layoutX="240.0" layoutY="23.0" mnemonicParsing="false" onAction="#addToDb" text="Add items to database" />
+   </children>
+</Pane>

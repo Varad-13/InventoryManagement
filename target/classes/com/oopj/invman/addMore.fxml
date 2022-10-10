@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="368.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopj.invman.addController">
+   <children>
+      <Label layoutX="38.0" layoutY="12.0" text="Inventory Management System">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="140.0" layoutY="44.0" text="Add Item">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="80.0" text="Item Barcode">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="120.0" text="Item Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="160.0" text="MRP">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="barcode" layoutX="175.0" layoutY="83.0" />
+      <TextField fx:id="name" layoutX="175.0" layoutY="123.0" />
+      <TextField fx:id="mrp" layoutX="175.0" layoutY="163.0" />
+      <Button fx:id="more" layoutX="150.0" layoutY="213.0" mnemonicParsing="false" onAction="#addDontExit" text="Add More" />
+      <Button fx:id="exit" layoutX="240.0" layoutY="213.0" mnemonicParsing="false" onAction="#addAndExit" text="Add and exit" />
+   </children>
+</Pane>
