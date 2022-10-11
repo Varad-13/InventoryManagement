@@ -74,10 +74,11 @@ public class MainController {
         amount.setVisible(false);
     }
     public void close() {
-        Platform.exit();
+        Stage stage = (Stage) amount.getScene().getWindow();
+        stage.hide();
     }
     public void onExitButtonClicked(){
-        close();
+        Platform.exit();
     }
     public void addToDb() throws IOException {
         addController add = new addController();
@@ -177,5 +178,4 @@ public class MainController {
         lookupController edit = new lookupController();
         edit.launch();
     }
-
 }
