@@ -121,14 +121,14 @@ public class MainController {
         amount.setVisible(false);
     }
     public void onItemAdd() throws SQLException, IOException {
-        count = count + 1;
-        if (count > 10) {
-            alert.alert("Bill full please make new");
-        }
         db.getItem(barcode.getText());
         if (database.mrp == 0) {
             alert.alert("Item doesn't exist on database");
         } else {
+            count = count + 1;
+            if (count > 10) {
+                alert.alert("Bill full please make new");
+            }
             switch (count) {
                 case 1:
                     item1.setText(database.item);
