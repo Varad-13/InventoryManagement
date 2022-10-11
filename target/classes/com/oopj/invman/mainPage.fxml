@@ -7,6 +7,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="531.0" prefWidth="385.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopj.invman.MainController">
    <children>
+      <TextField fx:id="discount" layoutX="161.0" layoutY="466.0" prefHeight="25.0" prefWidth="65.0" text="10" />
       <Button fx:id="generateTotal" layoutX="231.0" layoutY="466.0" mnemonicParsing="false" onAction="#generateTotal" text="Generate Total Amount" />
       <Label layoutX="14.0" layoutY="55.0" prefHeight="43.0" prefWidth="43.0" text="Bill">
          <font>
@@ -24,11 +25,10 @@
             <Font name="System Bold" size="26.0" />
          </font>
       </Label>
-      <TextField fx:id="discount" layoutX="161.0" layoutY="466.0" prefHeight="25.0" prefWidth="65.0" />
       <Button fx:id="exit" layoutX="336.0" layoutY="64.0" mnemonicParsing="false" onAction="#onExitButtonClicked" text="Exit" />
       <Button fx:id="newBill" layoutX="271.0" layoutY="64.0" mnemonicParsing="false" onAction="#newBill" text="New Bill" />
       <Button fx:id="add" layoutX="174.0" layoutY="23.0" mnemonicParsing="false" onAction="#onItemAdd" text="Add" />
-      <Label layoutX="106.0" layoutY="457.0" prefHeight="43.0" prefWidth="173.0" text="Discount" />
+      <Label layoutX="106.0" layoutY="457.0" prefHeight="43.0" prefWidth="52.0" text="Discount" />
       <AnchorPane layoutX="13.0" layoutY="98.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="360.0" style="-fx-background-color: GRAY;">
          <children>
             <Text layoutX="10.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sr No">
