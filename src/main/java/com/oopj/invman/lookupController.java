@@ -43,10 +43,11 @@ public class lookupController {
         update.setVisible(false);
         delete.setVisible(false);
     }
-    public void update(){
+    public void update() throws IOException, SQLException {
         String item = name.getText();
         int price = Integer.parseInt(mrp.getText());
-        close();
+        db.updateItem(barcode.getText(), item, price);
+        exit();
      }
      public void exit() throws IOException {
         close();
@@ -54,8 +55,9 @@ public class lookupController {
         Stage st = new Stage();
         main.launch(st);
      }
-     public void delete() throws SQLException {
+     public void delete() throws SQLException, IOException {
         db.deleteItem(barcode.getText());
+        exit();
      }
      public void get() throws SQLException {
         get.setVisible(false);
