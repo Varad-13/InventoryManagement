@@ -71,6 +71,7 @@ public class MainController {
     }
     public void initialize(){
         discount.setText("0");
+        discount.setEditable(true);
         amount.setVisible(false);
     }
     public void close() {
