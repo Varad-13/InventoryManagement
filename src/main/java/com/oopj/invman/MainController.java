@@ -122,58 +122,59 @@ public class MainController {
     }
     public void onItemAdd() throws SQLException, IOException {
         count = count + 1;
-        if(count>10){
+        if (count > 10) {
             alert.alert("Bill full please make new");
         }
         db.getItem(barcode.getText());
-        if(database.mrp==0){
+        if (database.mrp == 0) {
             alert.alert("Item doesn't exist on database");
+        } else {
+            switch (count) {
+                case 1:
+                    item1.setText(database.item);
+                    mrp1.setText(String.valueOf(database.mrp));
+                    amount.setVisible(false);
+                    break;
+                case 2:
+                    item2.setText(database.item);
+                    mrp2.setText(String.valueOf(database.mrp));
+                    break;
+                case 3:
+                    item3.setText(database.item);
+                    mrp3.setText(String.valueOf(database.mrp));
+                    break;
+                case 4:
+                    item4.setText(database.item);
+                    mrp4.setText(String.valueOf(database.mrp));
+                    break;
+                case 5:
+                    item5.setText(database.item);
+                    mrp5.setText(String.valueOf(database.mrp));
+                    break;
+                case 6:
+                    item6.setText(database.item);
+                    mrp6.setText(String.valueOf(database.mrp));
+                    break;
+                case 7:
+                    item7.setText(database.item);
+                    mrp7.setText(String.valueOf(database.mrp));
+                    break;
+                case 8:
+                    item8.setText(database.item);
+                    mrp8.setText(String.valueOf(database.mrp));
+                    break;
+                case 9:
+                    item9.setText(database.item);
+                    mrp9.setText(String.valueOf(database.mrp));
+                    break;
+                case 10:
+                    item10.setText(database.item);
+                    mrp10.setText(String.valueOf(database.mrp));
+                    break;
+            }
+            total = total + database.mrp;
+            db.completeCycle();
         }
-        switch(count){
-            case 1:
-                item1.setText(database.item);
-                mrp1.setText(String.valueOf(database.mrp));
-                amount.setVisible(false);
-                break;
-            case 2:
-                item2.setText(database.item);
-                mrp2.setText(String.valueOf(database.mrp));
-                break;
-            case 3:
-                item3.setText(database.item);
-                mrp3.setText(String.valueOf(database.mrp));
-                break;
-            case 4:
-                item4.setText(database.item);
-                mrp4.setText(String.valueOf(database.mrp));
-                break;
-            case 5:
-                item5.setText(database.item);
-                mrp5.setText(String.valueOf(database.mrp));
-                break;
-            case 6:
-                item6.setText(database.item);
-                mrp6.setText(String.valueOf(database.mrp));
-                break;
-            case 7:
-                item7.setText(database.item);
-                mrp7.setText(String.valueOf(database.mrp));
-                break;
-            case 8:
-                item8.setText(database.item);
-                mrp8.setText(String.valueOf(database.mrp));
-                break;
-            case 9:
-                item9.setText(database.item);
-                mrp9.setText(String.valueOf(database.mrp));
-                break;
-            case 10:
-                item10.setText(database.item);
-                mrp10.setText(String.valueOf(database.mrp));
-                break;
-        }
-        total = total + database.mrp;
-        db.completeCycle();
     }
     public void edit() throws IOException {
         close();
