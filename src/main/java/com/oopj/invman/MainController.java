@@ -61,6 +61,7 @@ public class MainController {
     @FXML
     private TextField discount = new TextField();
     database db = new database();
+    alertBoxController alert = new alertBoxController();
     static int total=0;
     static int count=0;
     public void launch(Stage stage) throws IOException {
@@ -68,6 +69,7 @@ public class MainController {
         Scene scene = new Scene(fxmlLoader.load(), 385, 530);
         stage.setTitle("Inventory Management");
         stage.setScene(scene);
+        newBill();
         stage.show();
     }
     public void initialize(){
@@ -118,14 +120,14 @@ public class MainController {
         mrp10.setText("");
         amount.setVisible(false);
     }
-    public void onItemAdd() throws SQLException {
+    public void onItemAdd() throws SQLException, IOException {
         count = count + 1;
         if(count>10){
-            System.out.println("Bill Full make new");
+            alert.alert("Bill full please make new");
         }
         db.getItem(barcode.getText());
         if(database.mrp==0){
-            System.out.println("Item doesn't exist on database");
+            alert.alert("Item doesn't exist on database");
         }
         switch(count){
             case 1:

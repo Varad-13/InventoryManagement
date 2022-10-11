@@ -7,7 +7,7 @@ public class database {
     private static final String DATABASE_USERNAME = "admin";
     private static final String DATABASE_PASSWORD = "genius123";
     private static final String INSERT_ITEM = "INSERT INTO items (barCode, itemName, MRP) VALUES (?, ?, ?)";
-    private static final String UPDATE_ITEM = "UPDATE items SET itemName = ? MRP = ? WHERE barCode = ?";
+    private static final String UPDATE_ITEM = "UPDATE items SET itemName = ?, MRP = ? WHERE barCode = ?";
     private static final String DELETE_ITEM = "DELETE FROM items WHERE barCode = ?";
     private static final String GET_ITEM = "SELECT * FROM items WHERE barCode = ?";
     static int mrp;
@@ -22,7 +22,7 @@ public class database {
         return null;
     }
 
-    public void getItem(String x) throws SQLException {
+    public boolean getItem(String x) throws SQLException {
         try (Connection connection = connectDatabase();
              PreparedStatement preparedStatement = connection.prepareStatement(GET_ITEM)) {
             preparedStatement.setString(1, x);
@@ -30,6 +30,10 @@ public class database {
             if (resultSet.next()) {
                 database.mrp = resultSet.getInt("MRP");
                 database.item = resultSet.getString("itemName");
+                return true;
+            }
+            else{
+                return false;
             }
         }
     }
@@ -53,12 +57,14 @@ public class database {
             preparedStatement.setInt(2, mrp);
             preparedStatement.setString(3, barCode);
             preparedStatement.executeUpdate();
+            getItem(barCode);
         }
     }
     public void deleteItem(String barCode) throws SQLException {
         try (Connection connection = connectDatabase();
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE_ITEM)) {
             preparedStatement.setString(1, barCode);
+            preparedStatement.executeUpdate();
         }
     }
 }

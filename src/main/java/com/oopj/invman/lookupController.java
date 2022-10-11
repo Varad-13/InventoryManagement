@@ -12,6 +12,7 @@ import java.sql.SQLException;
 
 public class lookupController {
     database db = new database();
+    alertBoxController alert = new alertBoxController();
     @FXML
     private TextField barcode;
     @FXML
@@ -47,7 +48,12 @@ public class lookupController {
         String item = name.getText();
         int price = Integer.parseInt(mrp.getText());
         db.updateItem(barcode.getText(), item, price);
-        exit();
+        db.getItem(barcode.getText());
+        if(database.item.equals(item) && database.mrp==price){
+            alertBoxController alert = new alertBoxController();
+            exit();
+            alert.alert("Successfully Updated");
+        }
      }
      public void exit() throws IOException {
         close();
@@ -57,7 +63,11 @@ public class lookupController {
      }
      public void delete() throws SQLException, IOException {
         db.deleteItem(barcode.getText());
-        exit();
+        if(!db.getItem(barcode.getText())){
+            exit();
+            alert.alert("Successfully Deleted");
+        }
+        db.completeCycle();
      }
      public void get() throws SQLException {
         get.setVisible(false);
