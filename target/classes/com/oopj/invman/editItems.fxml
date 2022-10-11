@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="262.0" prefWidth="368.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.oopj.invman.lookupController">
+   <children>
+      <Label layoutX="38.0" layoutY="12.0" text="Inventory Management System">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="137.0" layoutY="42.0" text="Item Lookup">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="80.0" text="Item Barcode">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="120.0" text="Item Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="160.0" text="MRP">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="barcode" layoutX="175.0" layoutY="83.0" />
+      <TextField fx:id="name" layoutX="175.0" layoutY="123.0" />
+      <TextField fx:id="mrp" layoutX="175.0" layoutY="163.0" />
+      <Button fx:id="update" layoutX="28.0" layoutY="213.0" mnemonicParsing="false" onAction="#update" text="Update" />
+      <Button fx:id="delete" layoutX="146.0" layoutY="213.0" mnemonicParsing="false" onAction="#delete" text="Delete Item" />
+      <Button fx:id="exit" layoutX="289.0" layoutY="213.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
+      <Button fx:id="get" layoutX="147.0" layoutY="213.0" mnemonicParsing="false" onAction="#get" text="Get Details" />
+   </children>
+</Pane>

@@ -60,6 +60,7 @@ public class MainController {
     private TextField barcode = new TextField();
     @FXML
     private TextField discount = new TextField();
+    database db = new database();
     static int total=0;
     static int count=0;
     public void launch(Stage stage) throws IOException {
@@ -91,6 +92,7 @@ public class MainController {
         amount.setVisible(true);
     }
     public void newBill() {
+        db.completeCycle();
         total = 0;
         count = 0;
         item1.setText("");
@@ -120,8 +122,10 @@ public class MainController {
         if(count>10){
             System.out.println("Bill Full make new");
         }
-        database db = new database();
         db.getItem(barcode.getText());
+        if(database.mrp==0){
+            System.out.println("Item doesn't exist on database");
+        }
         switch(count){
             case 1:
                 item1.setText(database.item);
@@ -166,5 +170,12 @@ public class MainController {
                 break;
         }
         total = total + database.mrp;
+        db.completeCycle();
     }
+    public void edit() throws IOException {
+        close();
+        lookupController edit = new lookupController();
+        edit.launch();
+    }
+
 }

@@ -202,5 +202,6 @@
          </children>
       </AnchorPane>
       <Button fx:id="addtodb" layoutX="240.0" layoutY="23.0" mnemonicParsing="false" onAction="#addToDb" text="Add items to database" />
+      <Button fx:id="edit" layoutX="108.0" layoutY="64.0" mnemonicParsing="false" onAction="#edit" text="Edit Items in database" />
    </children>
 </Pane>
